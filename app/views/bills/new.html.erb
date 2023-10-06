@@ -14,7 +14,7 @@
         <%= f.input :merchant %>
         <%= f.input :date %>
 
-        <div class="items" data-controller="bills-manual-input">
+        <div class="items" data-controller="bills-manual-input" data-bills-manual-input-target="itemsFieldElement">
           <%= f.simple_fields_for(:items) do |ff| %>
 
             <div class="align-items-center" data-bills-manual-input-target="addInputElement">
