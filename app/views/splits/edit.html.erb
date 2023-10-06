@@ -1,0 +1,7 @@
+<div class="container">
+  <h1>Edit <%= @split.name %></h1>
+  <%= simple_form_for(@split) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :date %>
+  <% end %>
+</div>

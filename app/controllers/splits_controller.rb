@@ -14,6 +14,9 @@ class SplitsController < ApplicationController
     @split = Split.new
   end
 
+  def edit
+  end
+
   def update
     @split.update(split_params)
 
