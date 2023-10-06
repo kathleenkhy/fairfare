@@ -20,9 +20,17 @@
 .red-button {
   display: inline-block;
   color:white;
-  background-color: rgb(177, 1, 1);
+  background-color: $ff-red;
   border-radius: 10px;
 }
+
+.delete-button {
+    display: inline-block;
+    color:white;
+    background-color: rgb(177, 1, 1);
+    border-radius: 10px;
+    margin-right: 10px;
+  }
 
 .green-button {
   display: inline-block;

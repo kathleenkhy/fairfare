@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :contacts, only: %i[index edit update]
   end
 
-  resources :splits, except: %i[edit] do
+  resources :splits do
     resources :split_members, only: %i[create destroy]
     resources :members, only: %i[create index]
     resources :contacts, only: %i[create] do
