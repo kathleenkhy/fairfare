@@ -27,7 +27,7 @@ export default class extends Controller {
     // this.nextId++;
 
     let currentId = this.itemsFieldElementTarget.querySelectorAll('.bill_items_id').length - 1
-    console.log('currentId', currentId)
+    // console.log('currentId', currentId)
     if (currentId < 0) currentId = 0
     this.inputField = this.addInputElementTargets[this.addInputElementTargets.length - 1].outerHTML
     let newInput = this.inputField.replaceAll(`_${currentId}_`, `_${currentId + 1}_`)
