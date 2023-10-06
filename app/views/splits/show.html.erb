@@ -5,11 +5,18 @@
     <div class="pt-5">
       <h1 class="purple-text">Split Name: <%= @split.name %></h1>
     </div>
-    <% if @split.bills.empty? %>
-      <%= render partial: 'nothing_new' %>
-      <% else %>
-      <%= render partial: 'bill_info' %>
-    <% end %>
-
+    <div>
+      <% if @split.bills.empty? %>
+        <%= render partial: 'nothing_new' %>
+        <% else %>
+        <%= render partial: 'bill_info' %>
+      <% end %>
+    </div>
+    <div class="text-end">
+      <%= link_to "Delete Split", @split,
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+      class: "btn red-button"
+      %>
+    </div>
   </div>
 </div>
