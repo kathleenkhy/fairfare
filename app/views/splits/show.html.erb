@@ -2,14 +2,22 @@
 <div class="page-setup">
 
   <div class="container">
-    <div class="pt-5">
+    <div class="pt-5 d-flex justify-content-between">
       <h1 class="purple-text">Split Name: <%= @split.name %></h1>
+      <%= link_to "Edit", edit_split_path(@split), class:"btn red-button", style: "height: 40px" %>
     </div>
-    <% if @split.bills.empty? %>
-      <%= render partial: 'nothing_new' %>
-      <% else %>
-      <%= render partial: 'bill_info' %>
-    <% end %>
-
+    <div>
+      <% if @split.bills.empty? %>
+        <%= render partial: 'nothing_new' %>
+        <% else %>
+        <%= render partial: 'bill_info' %>
+      <% end %>
+    </div>
+    <div class="text-end">
+      <%= link_to "Delete Split", @split,
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+      class: "btn delete-button"
+      %>
+    </div>
   </div>
 </div>

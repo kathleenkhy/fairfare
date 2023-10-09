@@ -1,20 +1,23 @@
 require 'securerandom'
 
 class SplitsController < ApplicationController
+  before_action :set_split, only: %i[show update edit destroy]
+
   def index
     @splits = current_user.member.splits
   end
 
   def show
-    @split = Split.find(params[:id])
   end
 
   def new
     @split = Split.new
   end
 
+  def edit
+  end
+
   def update
-    @split = Split.find(params[:id])
     @split.update(split_params)
 
     respond_to do |format|
@@ -55,9 +58,15 @@ class SplitsController < ApplicationController
   end
 
   def destroy
+    @split.destroy
+    redirect_to splits_path, status: :see_other
   end
 
   private
+
+  def set_split
+    @split = Split.find(params[:id])
+  end
 
   def split_params
     params.require(:split).permit(:name, :date)
