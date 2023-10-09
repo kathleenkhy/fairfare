@@ -10,7 +10,7 @@
         <%= f.input :merchant %>
         <%= f.input :date %>
 
-        <div class="items" data-controller="bills-manual-input" data-bills-manual-input-next-id-value="<%= @next_id %>">
+        <div class="items" data-controller="bills-manual-input" data-bills-manual-input-target="itemsFieldElement" data-bills-manual-input-next-id-value="<%= @next_id %>">
           <%= f.simple_fields_for(:items) do |ff| %>
 
             <div class="align-items-center" data-bills-manual-input-target="addInputElement">

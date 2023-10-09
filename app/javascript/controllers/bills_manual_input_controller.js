@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="bills-manual-input"
 export default class extends Controller {
-  static targets = ["addInputElement", "removeInputElement"]
+  static targets = ["addInputElement", "removeInputElement", "itemsFieldElement"]
 
   connect() {
     this.inputField = this.addInputElementTargets[this.addInputElementTargets.length - 1].outerHTML
@@ -20,11 +20,18 @@ export default class extends Controller {
   }
 
   buildItemInput() {
-    const currentId = this.nextId - 1
-    let newInput = this.inputField.replaceAll(`_${currentId}_`, `_${this.nextId}_`)
-    newInput = newInput.replaceAll(`[${currentId}]`, `[${this.nextId}]`)
+    // const currentId = this.nextId - 1
+    // let newInput = this.inputField.replaceAll(`_${currentId}_`, `_${this.nextId}_`)
+    // newInput = newInput.replaceAll(`[${currentId}]`, `[${this.nextId}]`)
 
-    this.nextId++;
+    // this.nextId++;
+
+    let currentId = this.itemsFieldElementTarget.querySelectorAll('.bill_items_id').length - 1
+    // console.log('currentId', currentId)
+    if (currentId < 0) currentId = 0
+    this.inputField = this.addInputElementTargets[this.addInputElementTargets.length - 1].outerHTML
+    let newInput = this.inputField.replaceAll(`_${currentId}_`, `_${currentId + 1}_`)
+    newInput = newInput.replaceAll(`[${currentId}]`, `[${currentId + 1}]`)
 
     return newInput;
   }
