@@ -50,9 +50,9 @@ Rails.application.routes.draw do
   resources :bills, only: [:edit, :update]
   resources :items, only: %i[destroy update]
 
-  resources :users do
-    resources :contacts, only: :index
-  end
+  # resources :users do
+  #   resources :contacts, only: :index
+  # end
 end
 # def tabulate
 #   @split = Split.find_by(invite_code: params[:id])

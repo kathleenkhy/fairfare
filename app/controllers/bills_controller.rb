@@ -93,7 +93,7 @@ class BillsController < ApplicationController
   end
 
   def update
-    pp params
+    # pp params
     @bill = Bill.find(params[:id])
     @bill.update(bill_params)
     @bill.update_total_bill

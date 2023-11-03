@@ -1,22 +1,42 @@
-<div class="homepage d-flex">
-  <div class="container-fluid ff-container">
-
-    <div class="d-flex">
-      <h1>Fairfare</h1>
-      <p>Let us do the splitting for you.</p>
-
-      <%= link_to new_user_session_path do %>
+<div>
+  <div class="pt-1 text-end pe-2">
+    <%= link_to new_user_session_path do %>
         <button class="btn login-btn standard-button red-button" type="button">
           Log In
         </button>
       <% end %>
-
-      <%# <button class="sign-up-btn"> %>
-      <div class="sign-up">
-        <%= link_to "Sign Up", new_user_registration_path %>
-      </div>
-      <%# </button> %>
-
+  </div>
+  <section class="img-banner">
+    <%= image_tag "hero-banner.jpg" %>
+  </section>
+  <div id="hero-content">
+    <h1>Fairfare</h1>
+    <p>Let us do the splitting for you.</p>
+    <div class="sign-up">
+        <%= link_to "Sign Up", new_user_registration_path, class:"teal-button" %>
     </div>
   </div>
 </div>
+<div>
+  <div class="my-3 text-center">
+    <h1 class="py-2 mt-5 mb-4 header-title">
+      Add members to your split
+    </h1>
+    <div>
+      <%= image_tag "adding-users.gif", class:"img-small" %>
+    </div>
+    <%# <button class="sign-up-btn"> %>
+
+    <%# </button> %>
+
+  </div>
+ </div>
+ <div class="my-3 text-center sub-banner">
+  <h1 class="py-2 mt-5 mb-4 header-title">
+    Upload a receipt to scan
+  </h1>
+  <div>
+    <%= image_tag "upload-receipt.gif", class:"img-small" %>
+  </div>
+
+ </div>
