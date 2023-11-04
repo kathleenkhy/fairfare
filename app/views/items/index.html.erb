@@ -35,7 +35,7 @@
 
       <div class="payer dropdown d-flex">
         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-select-person-target="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-          Select Person(s)
+          Select Payer(s)
         </button>
         <ul class="dropdown-menu">
           <% @split_members.each do |member| %>
@@ -44,7 +44,7 @@
         </ul>
       </div>
       <div class="d-flex">
-        <h2 class="mx-2">Payers: </h2>
+        <%# <h2 class="mx-2">Payers: </h2> %>
         <%= render "bills/payer_pills", bill: @bill %>
       </div>
 
